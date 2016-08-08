@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KeepItLocal</string>
+    <string name="hello"> Hello Resource! </string>
+    <string name="btnFood"> Food &amp; Drink </string>
+    <string name="btnEntertainment"> Entertainment </string>
+    <string name="btnFitness"> Health &amp; Fitness </string>
+    <string name="title_activity_food_ndrink">FoodNDrink</string>
+</resources>
