@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">KeepItLocal</string>
-    <string name="title_activity_food_ndrink">FoodNDrink</string>
+    <!-- *** TEXT ***-->
     <string name="hello"> Hello Resource! </string>
 
     <!-- *** BUTTONS ***-->
@@ -10,5 +9,10 @@
     <string name="btnFruit"> Fruit &amp; Veg </string>
     <string name="btnBakery"> Bakery </string>
     <string name="btnPrevious"> Previous </string>
+
+    <!-- *** APP & ACTIVITY TEXT NAMES ***-->
+    <string name="app_name">KeepItLocal</string>
+    <string name="title_activity_food_ndrink">FoodNDrink</string>
+    <string name="title_activity_fruit_nveg">FruitNVeg</string>
 
 </resources>

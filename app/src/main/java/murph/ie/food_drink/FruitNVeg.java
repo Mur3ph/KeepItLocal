@@ -13,37 +13,34 @@ import android.widget.Button;
 import murph.ie.keepitlocal.MainActivity;
 import murph.ie.keepitlocal.R;
 
-public class FoodNDrink extends AppCompatActivity implements View.OnClickListener{
+public class FruitNVeg extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_ndrink);
+        setContentView(R.layout.activity_fruit_nveg);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        //Previous button to go back to Main activity page
-        Button m_btnPreviousFoodNDrink = (Button) findViewById(R.id.btnPreviousFoodNDrink);
-        m_btnPreviousFoodNDrink.setOnClickListener(this);
-
-        // Fruit and veg. button to drill down to FruitNVeg activity page
-        Button m_btnFruitNVeg = (Button) findViewById(R.id.btnFruitNVeg);
-        m_btnFruitNVeg.setOnClickListener(this);
+        Button m_btnPreviousFruitNVeg = (Button) findViewById(R.id.btnPreviousFruitNVeg);
+        m_btnPreviousFruitNVeg.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Intent i;
         switch (v.getId()) {
-            case R.id.btnPreviousFoodNDrink:
+            case R.id.btnPreviousFruitNVeg:
                 // do your code
                 Log.i("clicks", "You Clicked previous");
-                i = new Intent(FoodNDrink.this, MainActivity.class);
+                i = new Intent(FruitNVeg.this, FoodNDrink.class);
                 startActivity(i);
                 break;
-            case R.id.btnFruitNVeg:
+            case R.id.btnOrganicFood:
                 // do your code
-                Log.i("clicks", "You Clicked fruit and veg.");
-                i = new Intent(FoodNDrink.this, FruitNVeg.class);
-                startActivity(i);
+                Log.i("clicks", "You Clicked organic foods.");
+                //i = new Intent(FruitNVeg.this, OrganicFoods.class);
+                //startActivity(i);
                 break;
 
             default:
