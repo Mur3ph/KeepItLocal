@@ -24,6 +24,9 @@ public class FruitNVeg extends AppCompatActivity implements View.OnClickListener
 
         Button m_btnPreviousFruitNVeg = (Button) findViewById(R.id.btnPreviousFruitNVeg);
         m_btnPreviousFruitNVeg.setOnClickListener(this);
+
+        Button m_btnOrganicFood = (Button) findViewById(R.id.btnOrganicFood);
+        m_btnOrganicFood.setOnClickListener(this);
     }
 
     @Override
@@ -39,8 +42,8 @@ public class FruitNVeg extends AppCompatActivity implements View.OnClickListener
             case R.id.btnOrganicFood:
                 // do your code
                 Log.i("clicks", "You Clicked organic foods.");
-                //i = new Intent(FruitNVeg.this, OrganicFoods.class);
-                //startActivity(i);
+                i = new Intent(FruitNVeg.this, OrganicFood.class);
+                startActivity(i);
                 break;
 
             default:

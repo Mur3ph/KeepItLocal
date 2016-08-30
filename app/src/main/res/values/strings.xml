@@ -14,5 +14,6 @@
     <string name="app_name">KeepItLocal</string>
     <string name="title_activity_food_ndrink">FoodNDrink</string>
     <string name="title_activity_fruit_nveg">FruitNVeg</string>
+    <string name="title_activity_organic_food">OrganicFood</string>
 
 </resources>
