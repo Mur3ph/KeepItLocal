@@ -1,6 +1,7 @@
 <resources>
     <!-- *** TEXT ***-->
-    <string name="hello"> Hello Resource! </string>
+    <string name="txtHello"> Hello Resource! </string>
+    <string name="txtWelcomeToOrganicFoodStore"> Welcome To Organic Food Store </string>
 
     <!-- *** BUTTONS ***-->
     <string name="btnFood"> Food &amp; Drink </string>
