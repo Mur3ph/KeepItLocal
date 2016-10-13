@@ -17,4 +17,6 @@
     <string name="title_activity_fruit_nveg">FruitNVeg</string>
     <string name="title_activity_organic_food">OrganicFood</string>
 
+    <string name="action_settings">Settings</string>
+
 </resources>
