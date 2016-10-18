@@ -3,11 +3,8 @@ package murph.ie.food_drink;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,16 +17,10 @@ import java.util.List;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import murph.ie.keepitlocal.MainActivity;
 import murph.ie.keepitlocal.R;
 
 public class OrganicFood extends AppCompatActivity implements View.OnClickListener{
@@ -37,7 +28,8 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
     private List<String> data = new ArrayList<String>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organic_food);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -47,10 +39,13 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
 //        Button m_btnPreviousOrganicFood = (Button) findViewById(R.id.btnPreviousOrganicFood);
 //        m_btnPreviousOrganicFood.setOnClickListener(this);
 
-        ListView lv = (ListView) findViewById(R.id.listview);
-        generateListContent();
-        lv.setAdapter(new MyListAdaper(this, R.layout.list_of_organic_food, data));
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        generateProductsForOrganicShopList();
+        ListView userInterfaceListView = (ListView) findViewById(R.id.listview);
+
+        userInterfaceListView.setAdapter(new MyListAdaper(this, R.layout.list_of_organic_food, data));
+//        userInterfaceListView.setOnClickListener(this);
+
+        userInterfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(OrganicFood.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
@@ -59,14 +54,12 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
 //        Intent i;
 //        switch (v.getId()) {
-//            case R.id.btnPreviousOrganicFood:
-//                // do your code
-//                Log.i("clicks", "You Clicked previous");
-//                i = new Intent(OrganicFood.this, FruitNVeg.class);
-//                startActivity(i);
+//            case R.id.listview:
+//                Toast.makeText(OrganicFood.this, "List item was clicked at ", Toast.LENGTH_SHORT).show();
 //                break;
 //            default:
 //                break;
@@ -77,14 +70,16 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
     //################################################################################################
     //################################################################################################
 
-    private void generateListContent() {
-        for(int i = 0; i < 55; i++) {
-            data.add("This is row number " + i);
+    private void generateProductsForOrganicShopList()
+    {
+        for(int i = 0; i < 10; i++) {
+            data.add("Row number " + i);
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -98,17 +93,21 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private class MyListAdaper extends ArrayAdapter<String> {
+    private class MyListAdaper extends ArrayAdapter<String>
+    {
         private int layout;
         private List<String> mObjects;
-        private MyListAdaper(Context context, int resource, List<String> objects) {
+
+        private MyListAdaper(Context context, int resource, List<String> objects)
+        {
             super(context, resource, objects);
             mObjects = objects;
             layout = resource;
