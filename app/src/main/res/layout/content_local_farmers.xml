@@ -9,8 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="murph.ie.food_drink.FruitNVeg"
-    tools:showIn="@layout/activity_fruit_nveg">
+    tools:context="murph.ie.food_drink.LocalFarmers"
+    tools:showIn="@layout/activity_local_farmers">
 
     <Button
         android:id="@+id/btnPreviousFruitNVeg"
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txtHello"
+            android:text="@string/txtLocalFarmer"
             />
 
         <Button
@@ -45,7 +45,7 @@
             android:layout_width="150dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Organic Foods"
+            android:text="@string/txtLocalFarmerJoe"
             />
 
         <Button
@@ -53,7 +53,7 @@
             android:layout_width="150dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Veg. Shop"
+            android:text="@string/txtLocalFarmerMary"
             />
 
         <!-- other buttons go here -->

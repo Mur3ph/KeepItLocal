@@ -2,23 +2,20 @@ package murph.ie.food_drink;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import murph.ie.keepitlocal.MainActivity;
 import murph.ie.keepitlocal.R;
 
-public class FruitNVeg extends AppCompatActivity implements View.OnClickListener {
+public class LocalFarmers extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fruit_nveg);
+        setContentView(R.layout.activity_local_farmers);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -36,13 +33,13 @@ public class FruitNVeg extends AppCompatActivity implements View.OnClickListener
             case R.id.btnPreviousFruitNVeg:
                 // do your code
                 Log.i("clicks", "You Clicked previous");
-                i = new Intent(FruitNVeg.this, FoodNDrink.class);
+                i = new Intent(LocalFarmers.this, FoodNDrink.class);
                 startActivity(i);
                 break;
             case R.id.btnOrganicFood:
                 // do your code
                 Log.i("clicks", "You Clicked organic foods.");
-                i = new Intent(FruitNVeg.this, OrganicFood.class);
+                i = new Intent(LocalFarmers.this, FarmerJoe.class);
                 startActivity(i);
                 break;
 

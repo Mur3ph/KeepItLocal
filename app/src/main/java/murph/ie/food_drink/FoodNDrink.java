@@ -2,10 +2,7 @@ package murph.ie.food_drink;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +21,7 @@ public class FoodNDrink extends AppCompatActivity implements View.OnClickListene
         Button m_btnPreviousFoodNDrink = (Button) findViewById(R.id.btnPreviousFoodNDrink);
         m_btnPreviousFoodNDrink.setOnClickListener(this);
 
-        // Fruit and veg. button to drill down to FruitNVeg activity page
+        // Fruit and veg. button to drill down to LocalFarmers activity page
         Button m_btnFruitNVeg = (Button) findViewById(R.id.btnFruitNVeg);
         m_btnFruitNVeg.setOnClickListener(this);
     }
@@ -42,7 +39,7 @@ public class FoodNDrink extends AppCompatActivity implements View.OnClickListene
             case R.id.btnFruitNVeg:
                 // do your code
                 Log.i("clicks", "You Clicked fruit and veg.");
-                i = new Intent(FoodNDrink.this, FruitNVeg.class);
+                i = new Intent(FoodNDrink.this, LocalFarmers.class);
                 startActivity(i);
                 break;
 

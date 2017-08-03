@@ -4,8 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="murph.ie.food_drink.OrganicFood"
-        tools:showIn="@layout/activity_organic_food">
+        tools:context="murph.ie.food_drink.FarmerJoe"
+        tools:showIn="@layout/activity_farmer_joe_produce">
 
         <ListView
             android:id="@+id/listview"

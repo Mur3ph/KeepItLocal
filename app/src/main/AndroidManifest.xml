@@ -20,11 +20,11 @@
             android:label="@string/title_activity_food_ndrink"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="murph.ie.food_drink.FruitNVeg"
+            android:name="murph.ie.food_drink.LocalFarmers"
             android:label="@string/title_activity_fruit_nveg"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="murph.ie.food_drink.OrganicFood"
+            android:name="murph.ie.food_drink.FarmerJoe"
             android:label="@string/title_activity_organic_food"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

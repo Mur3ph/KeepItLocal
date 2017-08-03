@@ -1,7 +1,6 @@
 package murph.ie.food_drink;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,7 +22,7 @@ import android.widget.TextView;
 
 import murph.ie.keepitlocal.R;
 
-public class OrganicFood extends AppCompatActivity implements View.OnClickListener{
+public class FarmerJoe extends AppCompatActivity implements View.OnClickListener{
 
     private List<String> data = new ArrayList<String>();
 
@@ -31,7 +30,7 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_organic_food);
+        setContentView(R.layout.activity_farmer_joe_produce);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -42,13 +41,13 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
         generateProductsForOrganicShopList();
         ListView userInterfaceListView = (ListView) findViewById(R.id.listview);
 
-        userInterfaceListView.setAdapter(new MyListAdaper(this, R.layout.list_of_organic_food, data));
+        userInterfaceListView.setAdapter(new MyListAdaper(this, R.layout.list_of_farmer_joe_produce, data));
 //        userInterfaceListView.setOnClickListener(this);
 
         userInterfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(OrganicFood.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(FarmerJoe.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -59,7 +58,7 @@ public class OrganicFood extends AppCompatActivity implements View.OnClickListen
 //        Intent i;
 //        switch (v.getId()) {
 //            case R.id.listview:
-//                Toast.makeText(OrganicFood.this, "List item was clicked at ", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(FarmerJoe.this, "List item was clicked at ", Toast.LENGTH_SHORT).show();
 //                break;
 //            default:
 //                break;

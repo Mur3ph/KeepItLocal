@@ -1,7 +1,12 @@
 <resources>
     <!-- *** TEXT ***-->
-    <string name="txtHello"> Hello Resource! </string>
+    <string name="txtLocalBusiness"> Local Business </string>
+    <string name="txtShopLocal"> Local Healthy Shopping </string>
     <string name="txtWelcomeToOrganicFoodStore"> Welcome To Organic Food Store </string>
+    <string name="txtLocalFarmer"> Local Farmers </string>
+    <string name="txtPrevious"> Previous </string>
+    <string name="txtLocalFarmerJoe"> Farmer Joe Bloggs </string>
+    <string name="txtLocalFarmerMary"> Farmer Bloody Mary </string>
 
     <!-- *** BUTTONS ***-->
     <string name="btnFood"> Food &amp; Drink </string>
