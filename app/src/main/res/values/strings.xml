@@ -7,8 +7,8 @@
     <string name="btnFood"> Food &amp; Drink </string>
     <string name="btnEntertainment"> Entertainment </string>
     <string name="btnFitness"> Health &amp; Fitness </string>
-    <string name="btnFruit"> Fruit &amp; Veg </string>
-    <string name="btnBakery"> Bakery </string>
+    <string name="btnLocalFarmer"> Local Farmers Products </string>
+    <string name="btnBakery"> Local Bakery </string>
     <string name="btnPrevious"> Previous </string>
 
     <!-- *** APP & ACTIVITY TEXT NAMES ***-->
