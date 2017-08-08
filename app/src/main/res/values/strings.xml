@@ -7,7 +7,7 @@
     <string name="txtPrevious"> Previous </string>
     <string name="txtLocalFarmerJoe"> Farmer Joe Bloggs </string>
     <string name="txtLocalFarmerMary"> Farmer Bloody Mary </string>
-    <string name="txtBuy"> Buy </string>
+    <string name="txtProductNumber"> Product Number </string>
 
     <!-- *** BUTTONS ***-->
     <string name="btnFood"> Food &amp; Drink </string>
@@ -16,6 +16,7 @@
     <string name="btnLocalFarmer"> Local Farmers Products </string>
     <string name="btnBakery"> Local Bakery </string>
     <string name="btnPrevious"> Previous </string>
+    <string name="btnBuy"> Buy </string>
 
     <!-- *** APP & ACTIVITY TEXT NAMES ***-->
     <string name="app_name">KeepItLocal</string>
