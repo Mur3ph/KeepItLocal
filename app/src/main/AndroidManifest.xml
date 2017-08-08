@@ -16,15 +16,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="murph.ie.food_drink.FoodNDrink"
+            android:name=".food_drink.FoodNDrinkActivity"
             android:label="@string/title_activity_food_ndrink"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="murph.ie.food_drink.LocalFarmers"
+            android:name=".food_drink.LocalFarmersActivity"
             android:label="@string/title_activity_fruit_nveg"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="murph.ie.food_drink.FarmerJoe"
+            android:name=".food_drink.FarmerJoeActivity"
             android:label="@string/title_activity_organic_food"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

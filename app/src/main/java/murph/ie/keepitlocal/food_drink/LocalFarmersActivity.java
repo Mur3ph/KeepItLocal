@@ -1,4 +1,4 @@
-package murph.ie.food_drink;
+package murph.ie.keepitlocal.food_drink;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import murph.ie.keepitlocal.R;
 
-public class LocalFarmers extends AppCompatActivity implements View.OnClickListener {
+public class LocalFarmersActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +33,13 @@ public class LocalFarmers extends AppCompatActivity implements View.OnClickListe
             case R.id.btnPreviousFruitNVeg:
                 // do your code
                 Log.i("clicks", "You Clicked previous");
-                i = new Intent(LocalFarmers.this, FoodNDrink.class);
+                i = new Intent(LocalFarmersActivity.this, FoodNDrinkActivity.class);
                 startActivity(i);
                 break;
             case R.id.btnOrganicFood:
                 // do your code
                 Log.i("clicks", "You Clicked organic foods.");
-                i = new Intent(LocalFarmers.this, FarmerJoe.class);
+                i = new Intent(LocalFarmersActivity.this, FarmerJoeActivity.class);
                 startActivity(i);
                 break;
 

@@ -1,4 +1,4 @@
-package murph.ie.food_drink;
+package murph.ie.keepitlocal.food_drink;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import murph.ie.keepitlocal.MainActivity;
 import murph.ie.keepitlocal.R;
 
-public class FoodNDrink extends AppCompatActivity implements View.OnClickListener{
+public class FoodNDrinkActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class FoodNDrink extends AppCompatActivity implements View.OnClickListene
         Button m_btnPreviousFoodNDrink = (Button) findViewById(R.id.btnPreviousFoodNDrink);
         m_btnPreviousFoodNDrink.setOnClickListener(this);
 
-        // Fruit and veg. button to drill down to LocalFarmers activity page
+        // Fruit and veg. button to drill down to LocalFarmersActivity activity page
         Button m_btnFruitNVeg = (Button) findViewById(R.id.btnFruitNVeg);
         m_btnFruitNVeg.setOnClickListener(this);
     }
@@ -33,13 +33,13 @@ public class FoodNDrink extends AppCompatActivity implements View.OnClickListene
             case R.id.btnPreviousFoodNDrink:
                 // do your code
                 Log.i("clicks", "You Clicked previous");
-                i = new Intent(FoodNDrink.this, MainActivity.class);
+                i = new Intent(FoodNDrinkActivity.this, MainActivity.class);
                 startActivity(i);
                 break;
             case R.id.btnFruitNVeg:
                 // do your code
                 Log.i("clicks", "You Clicked fruit and veg.");
-                i = new Intent(FoodNDrink.this, LocalFarmers.class);
+                i = new Intent(FoodNDrinkActivity.this, LocalFarmersActivity.class);
                 startActivity(i);
                 break;
 

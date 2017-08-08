@@ -1,4 +1,4 @@
-package murph.ie.food_drink;
+package murph.ie.keepitlocal.food_drink;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import murph.ie.keepitlocal.R;
 
-public class FarmerJoe extends AppCompatActivity implements View.OnClickListener{
+public class FarmerJoeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private List<String> data = new ArrayList<String>();
 
@@ -47,7 +47,7 @@ public class FarmerJoe extends AppCompatActivity implements View.OnClickListener
         userInterfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(FarmerJoe.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(FarmerJoeActivity.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -58,7 +58,7 @@ public class FarmerJoe extends AppCompatActivity implements View.OnClickListener
 //        Intent i;
 //        switch (v.getId()) {
 //            case R.id.listview:
-//                Toast.makeText(FarmerJoe.this, "List item was clicked at ", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(FarmerJoeActivity.this, "List item was clicked at ", Toast.LENGTH_SHORT).show();
 //                break;
 //            default:
 //                break;

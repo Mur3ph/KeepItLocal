@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import murph.ie.food_drink.FoodNDrink;
+import murph.ie.keepitlocal.food_drink.FoodNDrinkActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnFoodNDrink:
                 // do your code
                 Log.i("clicks", "You Clicked Food & Drink");
-                i=new Intent(MainActivity.this, FoodNDrink.class);
+                i=new Intent(MainActivity.this, FoodNDrinkActivity.class);
                 startActivity(i);
                 break;
             case R.id.btnHealthNFitness:

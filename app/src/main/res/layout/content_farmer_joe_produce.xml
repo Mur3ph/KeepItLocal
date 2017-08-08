@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="murph.ie.food_drink.FarmerJoe"
+        tools:context=".food_drink.FarmerJoeActivity"
         tools:showIn="@layout/activity_farmer_joe_produce">
 
         <ListView
