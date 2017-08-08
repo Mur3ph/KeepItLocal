@@ -7,6 +7,7 @@
     <string name="txtPrevious"> Previous </string>
     <string name="txtLocalFarmerJoe"> Farmer Joe Bloggs </string>
     <string name="txtLocalFarmerMary"> Farmer Bloody Mary </string>
+    <string name="txtBuy"> Buy </string>
 
     <!-- *** BUTTONS ***-->
     <string name="btnFood"> Food &amp; Drink </string>
