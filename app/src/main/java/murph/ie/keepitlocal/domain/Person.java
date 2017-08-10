@@ -5,4 +5,9 @@ package murph.ie.keepitlocal.domain;
  */
 
 public class Person {
+    private String firstName;
+    private String lastName;
+    private String occupation;
+    private String address;
+    private Product product;
 }
