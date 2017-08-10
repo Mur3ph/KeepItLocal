@@ -10,6 +10,12 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+
+//    Refactoring adding folders to clean/seperate xml files
+//    dependencies{
+//        compile 'com.android.support:appcompat-v7:19.1.0'
+//    }
+
 }
 
 allprojects {
