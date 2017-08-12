@@ -1,4 +1,4 @@
-package murph.ie.keepitlocal.domain;
+package murph.ie.keepitlocal.android_object;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,8 +13,6 @@ import android.widget.Toast;
 import java.util.List;
 
 import murph.ie.keepitlocal.R;
-
-import static java.security.AccessController.getContext;
 
 /**
  * Created by PC on 12/08/2017.

@@ -1,28 +1,21 @@
 package murph.ie.keepitlocal.food_drink;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.view.ViewGroup;
+
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import murph.ie.keepitlocal.R;
-import murph.ie.keepitlocal.domain.MyListAdaper;
-import murph.ie.keepitlocal.domain.ViewHolder;
+import murph.ie.keepitlocal.android_object.MyListAdaper;
 
 public class FarmerJoeActivity extends AppCompatActivity implements View.OnClickListener{
 

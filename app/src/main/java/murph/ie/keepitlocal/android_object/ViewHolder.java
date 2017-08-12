@@ -1,4 +1,4 @@
-package murph.ie.keepitlocal.domain;
+package murph.ie.keepitlocal.android_object;
 
 import android.widget.Button;
 import android.widget.ImageView;
