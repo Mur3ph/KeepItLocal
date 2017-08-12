@@ -20,20 +20,33 @@ import murph.ie.keepitlocal.android_object.MyListAdaper;
 public class FarmerJoeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private List<String> listOfProducts = new ArrayList<String>();
+    private ListView userInterfaceListView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_farmer_joe_produce);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         generateProductsForOrganicShopList();
-        ListView userInterfaceListView = (ListView) findViewById(R.id.listview);
+        userInterfaceListView = (ListView) findViewById(R.id.listview);
+        setListOfProductsAdapter();
+        whenUserClicksOnProduct();
+    }
 
+    private void generateProductsForOrganicShopList() {
+        for(int i = 0; i < 10; i++) {
+            listOfProducts.add("Row number " + i);
+        }
+    }
+
+    private void setListOfProductsAdapter(){
         userInterfaceListView.setAdapter(new MyListAdaper(this, R.layout.list_of_farmer_joe_produce, listOfProducts));
+    }
 
+    private void whenUserClicksOnProduct(){
         userInterfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -46,17 +59,6 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v)
     {
 
-    }
-
-    //################################################################################################
-    //################################################################################################
-    //################################################################################################
-
-    private void generateProductsForOrganicShopList()
-    {
-        for(int i = 0; i < 10; i++) {
-            listOfProducts.add("Row number " + i);
-        }
     }
 
     @Override
@@ -79,7 +81,6 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
