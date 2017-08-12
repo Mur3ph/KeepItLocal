@@ -19,21 +19,21 @@ import murph.ie.keepitlocal.R;
  */
 
 public class MyListAdaper extends ArrayAdapter<String> {
-    private int layout;
-    private List<String> mObjects;
+    private int imageOfProduct;
+    private List<String> listOfProducts;
 
-    public MyListAdaper(Context context, int resource, List<String> objects)
+    public MyListAdaper(Context context, int imageOfProduct, List<String> listOfProducts)
     {
-        super(context, resource, objects);
-        mObjects = objects;
-        layout = resource;
+        super(context, imageOfProduct, listOfProducts);
+        this.listOfProducts = listOfProducts;
+        this.imageOfProduct = imageOfProduct;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         if(convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(layout, parent, false);
+            convertView = inflater.inflate(imageOfProduct, parent, false);
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.thumbnail = (ImageView) convertView.findViewById(R.id.list_item_thumbnail);
             viewHolder.title = (TextView) convertView.findViewById(R.id.list_item_text);

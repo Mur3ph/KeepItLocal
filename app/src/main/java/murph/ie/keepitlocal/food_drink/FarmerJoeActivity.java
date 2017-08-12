@@ -19,7 +19,7 @@ import murph.ie.keepitlocal.android_object.MyListAdaper;
 
 public class FarmerJoeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private List<String> data = new ArrayList<String>();
+    private List<String> listOfProducts = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,7 +32,7 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         generateProductsForOrganicShopList();
         ListView userInterfaceListView = (ListView) findViewById(R.id.listview);
 
-        userInterfaceListView.setAdapter(new MyListAdaper(this, R.layout.list_of_farmer_joe_produce, data));
+        userInterfaceListView.setAdapter(new MyListAdaper(this, R.layout.list_of_farmer_joe_produce, listOfProducts));
 
         userInterfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -55,7 +55,7 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
     private void generateProductsForOrganicShopList()
     {
         for(int i = 0; i < 10; i++) {
-            data.add("Row number " + i);
+            listOfProducts.add("Row number " + i);
         }
     }
 
