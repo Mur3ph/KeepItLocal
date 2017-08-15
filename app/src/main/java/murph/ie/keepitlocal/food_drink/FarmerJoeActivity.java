@@ -16,7 +16,7 @@ import android.widget.ListView;
 
 import murph.ie.keepitlocal.R;
 import murph.ie.keepitlocal.android_object.MyListAdaper;
-import murph.ie.keepitlocal.domain.Fruit;
+import murph.ie.keepitlocal.domain.product.Fruit;
 
 public class FarmerJoeActivity extends AppCompatActivity implements View.OnClickListener{
 

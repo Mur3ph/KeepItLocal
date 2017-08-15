@@ -1,4 +1,4 @@
-package murph.ie.keepitlocal.domain;
+package murph.ie.keepitlocal.domain.product;
 
 import android.media.Image;
 

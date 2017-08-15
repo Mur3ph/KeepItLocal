@@ -1,10 +1,12 @@
-package murph.ie.keepitlocal.domain;
+package murph.ie.keepitlocal.domain.product;
+
+import murph.ie.keepitlocal.domain.product.Product;
 
 /**
  * Created by PC on 15/08/2017.
  */
 
-public class Vegetable implements Product{
+public class Vegetable implements Product {
 
     private String name;
     private int price;

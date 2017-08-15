@@ -1,5 +1,7 @@
 package murph.ie.keepitlocal.domain;
 
+import murph.ie.keepitlocal.domain.product.Product;
+
 /**
  * Created by PC on 08/08/2017.
  */
