@@ -16,11 +16,14 @@ import android.widget.ListView;
 
 import murph.ie.keepitlocal.R;
 import murph.ie.keepitlocal.android_object.MyListAdaper;
+import murph.ie.keepitlocal.domain.Fruit;
 
 public class FarmerJoeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private List<String> listOfProducts = new ArrayList<String>();
     private ListView userInterfaceListView;
+    private Fruit fruit;
+    private List<Fruit> fruitBasket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -30,6 +33,7 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        createListOfFruit();
         generateProductsForOrganicShopList();
         userInterfaceListView = (ListView) findViewById(R.id.listview);
         setListOfProductsAdapter();
@@ -37,9 +41,22 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void generateProductsForOrganicShopList() {
-        for(int i = 0; i < 10; i++) {
-            listOfProducts.add("Row number " + i);
+//        for(int i = 0; i < 10; i++) {
+//            listOfProducts.add("Row number " + i);
+//        }
+        for(Fruit fruit : fruitBasket){
+            listOfProducts.add(fruit.getName() + " " + fruit.getOrigin());
         }
+    }
+
+    private void createListOfFruit(){
+        fruitBasket = new ArrayList<>();
+        fruitBasket.add(new Fruit("Mellon", 5, "FR"));
+        fruitBasket.add(new Fruit("Apple", 1, "IRE"));
+        fruitBasket.add(new Fruit("Raspberry", 3, "IRE"));
+        fruitBasket.add(new Fruit("Pineapple", 7, "FR"));
+        fruitBasket.add(new Fruit("Pumpkin", 8, "IRE"));
+        fruitBasket.add(new Fruit("Kiwi", 2, "IRE"));
     }
 
     private void setListOfProductsAdapter(){
