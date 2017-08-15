@@ -22,7 +22,6 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
 
     private List<String> listOfProducts = new ArrayList<String>();
     private ListView userInterfaceListView;
-    private Fruit fruit;
     private List<Fruit> fruitBasket;
 
     @Override
@@ -40,15 +39,6 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         whenUserClicksOnProduct();
     }
 
-    private void generateProductsForOrganicShopList() {
-//        for(int i = 0; i < 10; i++) {
-//            listOfProducts.add("Row number " + i);
-//        }
-        for(Fruit fruit : fruitBasket){
-            listOfProducts.add(fruit.getName() + " " + fruit.getOrigin());
-        }
-    }
-
     private void createListOfFruit(){
         fruitBasket = new ArrayList<>();
         fruitBasket.add(new Fruit("Mellon", 5, "FR"));
@@ -57,6 +47,12 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         fruitBasket.add(new Fruit("Pineapple", 7, "FR"));
         fruitBasket.add(new Fruit("Pumpkin", 8, "IRE"));
         fruitBasket.add(new Fruit("Kiwi", 2, "IRE"));
+    }
+
+    private void generateProductsForOrganicShopList() {
+        for(Fruit fruit : fruitBasket){
+            listOfProducts.add(fruit.getName() + " " + fruit.getOrigin());
+        }
     }
 
     private void setListOfProductsAdapter(){

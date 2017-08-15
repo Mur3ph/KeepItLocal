@@ -14,16 +14,15 @@ import java.net.URL;
  * Created by PC on 10/08/2017.
  */
 
-public class Product {
-    private String name;
-    private double price;
-    private int quantity;
-    private boolean chemicalsUsed;
-    private boolean isOrganic;
-    private String imageFilePath = "res/layout/euro-lotto-numbers-03june2017.txt";
+public interface Product {
+    String getName();
+    int getPrice();
+    String getOrigin();
 
-    public void getImage(){
-
-    }
+//    int getQuantity();
+//    void setQuantity(int quantity);
+//    boolean getChemicalsUsed();
+//    boolean IsOrganic();
+//    String getFilePathProductImage();
 
 }
