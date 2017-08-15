@@ -17,12 +17,14 @@ import android.widget.ListView;
 import murph.ie.keepitlocal.R;
 import murph.ie.keepitlocal.android_object.MyListAdaper;
 import murph.ie.keepitlocal.domain.product.Fruit;
+import murph.ie.keepitlocal.domain.product.Product;
+import murph.ie.keepitlocal.domain.product.Vegetable;
 
 public class FarmerJoeActivity extends AppCompatActivity implements View.OnClickListener{
 
     private List<String> listOfProducts = new ArrayList<String>();
     private ListView userInterfaceListView;
-    private List<Fruit> fruitBasket;
+    private List<Product> farmBasket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -32,6 +34,7 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        createListOfVegetable();
         createListOfFruit();
         generateProductsForOrganicShopList();
         userInterfaceListView = (ListView) findViewById(R.id.listview);
@@ -39,19 +42,29 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         whenUserClicksOnProduct();
     }
 
+    private void createListOfVegetable(){
+        farmBasket = new ArrayList<>();
+        farmBasket.add(new Vegetable("Cabbage", 5, "FR"));
+        farmBasket.add(new Vegetable("Spuds", 1, "IRE"));
+        farmBasket.add(new Vegetable("Carrot", 3, "IRE"));
+        farmBasket.add(new Vegetable("Beet", 7, "FR"));
+        farmBasket.add(new Vegetable("Chilli", 8, "IRE"));
+        farmBasket.add(new Vegetable("Peas", 2, "IRE"));
+    }
+
     private void createListOfFruit(){
-        fruitBasket = new ArrayList<>();
-        fruitBasket.add(new Fruit("Mellon", 5, "FR"));
-        fruitBasket.add(new Fruit("Apple", 1, "IRE"));
-        fruitBasket.add(new Fruit("Raspberry", 3, "IRE"));
-        fruitBasket.add(new Fruit("Pineapple", 7, "FR"));
-        fruitBasket.add(new Fruit("Pumpkin", 8, "IRE"));
-        fruitBasket.add(new Fruit("Kiwi", 2, "IRE"));
+        farmBasket = new ArrayList<>();
+        farmBasket.add(new Fruit("Mellon", 5, "FR"));
+        farmBasket.add(new Fruit("Apple", 1, "IRE"));
+        farmBasket.add(new Fruit("Raspberry", 3, "IRE"));
+        farmBasket.add(new Fruit("Pineapple", 7, "FR"));
+        farmBasket.add(new Fruit("Pumpkin", 8, "IRE"));
+        farmBasket.add(new Fruit("Kiwi", 2, "IRE"));
     }
 
     private void generateProductsForOrganicShopList() {
-        for(Fruit fruit : fruitBasket){
-            listOfProducts.add(fruit.getName() + " " + fruit.getOrigin());
+        for(Product products : farmBasket){
+            listOfProducts.add(products.getName() + " " + products.getOrigin());
         }
     }
 
