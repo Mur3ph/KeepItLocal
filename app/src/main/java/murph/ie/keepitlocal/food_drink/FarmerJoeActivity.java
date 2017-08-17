@@ -67,7 +67,7 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
 
     private void generateProductsForOrganicShopList() {
         for(Product products : farmBasket){
-            listOfProducts.add(products.getName() + " " + products.getOrigin());
+            listOfProducts.add(products.getName() + " €" + products.getPrice() + " Origin: " + products.getOrigin());
         }
     }
 
