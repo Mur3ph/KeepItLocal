@@ -34,15 +34,15 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        createListOfVegetable();
-        createListOfFruit();
+        populateListWithVegetable();
+        populateListWithFruit();
         generateProductsForOrganicShopList();
         userInterfaceListView = (ListView) findViewById(R.id.listview);
         setListOfProductsAdapter();
         whenUserClicksOnProduct();
     }
 
-    private void createListOfVegetable(){
+    private void populateListWithVegetable(){
         farmBasket = new ArrayList<>();
         farmBasket.add(new Vegetable("Cabbage", 5, "FR"));
         farmBasket.add(new Vegetable("Spuds", 1, "IRE"));
@@ -52,7 +52,7 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
         farmBasket.add(new Vegetable("Peas", 2, "IRE"));
     }
 
-    private void createListOfFruit(){
+    private void populateListWithFruit(){
         farmBasket = new ArrayList<>();
         farmBasket.add(new Fruit("Mellon", 5, "FR"));
         farmBasket.add(new Fruit("Apple", 1, "IRE"));
