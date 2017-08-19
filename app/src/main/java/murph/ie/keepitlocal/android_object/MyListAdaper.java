@@ -21,6 +21,7 @@ import murph.ie.keepitlocal.R;
 public class MyListAdaper extends ArrayAdapter<String> {
     private int imageOfProduct;
     private List<String> listOfProducts;
+    private View convertView;
 
     public MyListAdaper(Context context, int imageOfProduct, List<String> listOfProducts)
     {
@@ -31,29 +32,59 @@ public class MyListAdaper extends ArrayAdapter<String> {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        if(convertView == null) {
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(imageOfProduct, parent, false);
-            ViewHolder viewHolder = new ViewHolder();
-            viewHolder.thumbnail = (ImageView) convertView.findViewById(R.id.list_item_thumbnail);
-            viewHolder.title = (TextView) convertView.findViewById(R.id.list_item_text);
-            viewHolder.button = (Button) convertView.findViewById(R.id.list_item_btn);
-            convertView.setTag(viewHolder);
+        setViewHolder();
+        if(isViewEmpty()) {
+            this.convertView = setLayoutInflater(parent);
+            this.convertView.setTag(setViewHolderValues());
         }
-        setViewHolder(position, convertView);
-
-        return convertView;
+        setMessageForViewHolderOnClick(position);
+        return this.convertView;
     }
 
-    private void setViewHolder(final int position, View convertView){
-        ViewHolder mainViewholder = null;
-        mainViewholder = (ViewHolder) convertView.getTag();
-        mainViewholder.button.setOnClickListener(new View.OnClickListener() {
+    private void setViewHolder(){
+        this.convertView = convertView;
+    }
+
+    private boolean isViewEmpty(){
+        return this.convertView == null;
+    }
+
+    private View setLayoutInflater(ViewGroup parent){
+        return getInflaterContext().inflate(this.imageOfProduct, parent, false);
+    }
+
+    private LayoutInflater getInflaterContext(){
+        return LayoutInflater.from(getContext());
+    }
+
+    private ViewHolder setViewHolderValues(){
+        ViewHolder viewHolder = new ViewHolder();
+        viewHolder.thumbnail = findThumbnailView();
+        viewHolder.title = findTextView();
+        viewHolder.button = findButtonView();
+        return viewHolder;
+    }
+
+    private ImageView findThumbnailView(){
+        return (ImageView) this.convertView.findViewById(R.id.list_item_thumbnail);
+    }
+
+    private TextView findTextView(){
+        return (TextView) this.convertView.findViewById(R.id.list_item_text);
+    }
+
+    private Button findButtonView(){
+        return (Button) this.convertView.findViewById(R.id.list_item_btn);
+    }
+
+    private void setMessageForViewHolderOnClick(final int position){
+        ViewHolder viewholder = (ViewHolder) this.convertView.getTag();
+        viewholder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Button was clicked for list item " + position, Toast.LENGTH_SHORT).show();
             }
         });
-        mainViewholder.title.setText(getItem(position));
+        viewholder.title.setText(getItem(position));
     }
 }
