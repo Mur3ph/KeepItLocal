@@ -18,12 +18,12 @@ import murph.ie.keepitlocal.R;
  * Created by PC on 12/08/2017.
  */
 
-public class MyListAdaper extends ArrayAdapter<String> {
+public class MyListAdapter extends ArrayAdapter<String> {
     private int imageOfProduct;
     private List<String> listOfProducts;
     private View convertView;
 
-    public MyListAdaper(Context context, int imageOfProduct, List<String> listOfProducts)
+    public MyListAdapter(Context context, int imageOfProduct, List<String> listOfProducts)
     {
         super(context, imageOfProduct, listOfProducts);
         this.listOfProducts = listOfProducts;

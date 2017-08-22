@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import murph.ie.keepitlocal.R;
-import murph.ie.keepitlocal.android_object.MyListAdaper;
+import murph.ie.keepitlocal.android_object.MyListAdapter;
 import murph.ie.keepitlocal.domain.product.Fruit;
 import murph.ie.keepitlocal.domain.product.Product;
 import murph.ie.keepitlocal.domain.product.Vegetable;
@@ -72,7 +72,7 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void setListOfProductsAdapter(){
-        userInterfaceListView.setAdapter(new MyListAdaper(this, R.layout.list_of_farmer_joe_produce, listOfProducts));
+        userInterfaceListView.setAdapter(new MyListAdapter(this, R.layout.list_of_farmer_joe_produce, listOfProducts));
     }
 
     private void whenUserClicksOnProduct(){
