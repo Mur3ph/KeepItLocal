@@ -78,8 +78,8 @@ public class FarmerJoeActivity extends AppCompatActivity implements View.OnClick
     private void whenUserClicksOnProduct(){
         userInterfaceListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(FarmerJoeActivity.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> parent, View view, int positionOfUsersClick, long id) {
+                Toast.makeText(FarmerJoeActivity.this, "List item was clicked at position " + positionOfUsersClick, Toast.LENGTH_SHORT).show();
             }
         });
     }

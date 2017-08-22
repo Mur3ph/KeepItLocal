@@ -77,14 +77,14 @@ public class MyListAdapter extends ArrayAdapter<String> {
         return (Button) this.convertView.findViewById(R.id.list_item_btn);
     }
 
-    private void setMessageForViewHolderOnClick(final int position){
+    private void setMessageForViewHolderOnClick(final int positionOfUsersClick){
         ViewHolder viewholder = (ViewHolder) this.convertView.getTag();
         viewholder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Button was clicked for list item " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Button was clicked for list item " + positionOfUsersClick, Toast.LENGTH_SHORT).show();
             }
         });
-        viewholder.title.setText(getItem(position));
+        viewholder.title.setText(getItem(positionOfUsersClick));
     }
 }
