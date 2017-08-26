@@ -30,7 +30,7 @@ CREATE TABLE ADDRESS(
      address_id 	            NUMBER(11)  NOT NULL,
      customer_id 	            NUMBER(11) NOT NULL,
      address_line1 	            VARCHAR(50) NOT NULL,
-     address_line2 	            VARCHAR(50) NOT NULL
+     address_line2 	            VARCHAR(50) NOT NULL,
      city 		  	            VARCHAR(20) NOT NULL,
      county 		            VARCHAR(20) NOT NULL,
      country 		            VARCHAR(20) NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE PRODUCT(
 	supplier_id 				  NUMBER(11) NOT NULL,
 	product_code				  VARCHAR(30)NOT NULL,
     product_name			      VARCHAR(30)NOT NULL,
-    product_price 			      DOUBLE(7,2) NOT NULL,
+    product_price 			      NUMBER(7,2) NOT NULL,
     CONSTRAINT pk_product         PRIMARY KEY (product_id),
 	CONSTRAINT fk_prod_supplier   FOREIGN KEY (supplier_id) REFERENCES SUPPLIER (supplier_id) ON DELETE CASCADE
 );
@@ -73,7 +73,7 @@ CREATE TABLE ORDER_ITEM(
     order_id 		              NUMBER(11) NOT NULL,
     product_id 		              NUMBER(11) NOT NULL,
     CONSTRAINT pk_order_item      PRIMARY KEY (order_id, product_id),
-    CONSTRAINT fk_item_order      FOREIGN KEY (order_id)   REFERENCES THEORDER (order_id)  ON DELETE CASCADE,
-	CONSTRAINT fk_item_product    FOREIGN KEY (product_id) REFERENCES PRODUCT (product_id) ON DELETE CASCADE
+    CONSTRAINT fk_item_order      FOREIGN KEY (order_id)   REFERENCES LOCAL_ORDER (order_id)  ON DELETE CASCADE,
+	CONSTRAINT fk_item_product    FOREIGN KEY (product_id) REFERENCES PRODUCT (product_id)    ON DELETE CASCADE
 );
 
