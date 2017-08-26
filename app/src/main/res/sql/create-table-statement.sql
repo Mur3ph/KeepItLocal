@@ -1,79 +1,79 @@
 /* ORIGINAL DATABASE ALL WHOLE LOT EXECUTES TOGETHER......................................*/
-
-DROP TABLE ORDERITEM;
-DROP TABLE PRODUCT;
-DROP TABLE THEORDER;
-DROP TABLE CUSTOMER;
-DROP TABLE SUPPLIER;
-DROP TABLE THEUSER;
-
+-- TODO Create check constraints on tables, columns
 
 
 CREATE TABLE CUSTOMER(
-    CUSTOMERID 		  NUMBER(11) NOT NULL,
-    FIRSTNAME 		  VARCHAR(50) NOT NULL,
-    LASTNAME 		  VARCHAR(50) NOT NULL,
-    ADDRESS1 	  	  VARCHAR(50) NOT NULL,
-	ADDRESS2 		  VARCHAR(50) NOT NULL,
-	CITY 		  	  VARCHAR(20) NOT NULL,
-	COUNTY 		  	  VARCHAR(20) NOT NULL,
-	COUNTRY 		  VARCHAR(20) NOT NULL,
-	ZIP 		  	  VARCHAR(20) NOT NULL,
-	PHONE 		  	  VARCHAR(20) NOT NULL,
-	CARDTYPE 		  VARCHAR(20) NOT NULL,
-	CARDNUMBER 		  VARCHAR(20) NOT NULL,
-	CARDIDNUMBER 	  VARCHAR(20) NOT NULL,
-	VALIDUNTIL 		  VARCHAR(20) NOT NULL,
-	CONSTRAINT pk_custid PRIMARY KEY (CUSTOMERID)
+    customer_id 	       NUMBER(11) NOT NULL,
+    first_name 		       VARCHAR(50) NOT NULL,
+    last_name 		       VARCHAR(50) NOT NULL,
+	phone 		  	       VARCHAR(20) NOT NULL,
+	card_type 		       VARCHAR(20) NOT NULL,
+	card_number 	       VARCHAR(20) NOT NULL,
+	card_id_number 	       VARCHAR(20) NOT NULL,
+	valid_date 		       VARCHAR(20) NOT NULL,
+	CONSTRAINT pk_customer PRIMARY KEY (customer_id)
+);
+
+CREATE TABLE SELLER (
+    seller_id 		  	NUMBER(11) NOT NULL,
+    customer_id 	    NUMBER(11) NOT NULL,
+    first_name 		    VARCHAR(50) NOT NULL,
+    last_name 		    VARCHAR(50) NOT NULL,
+    email 	            VARCHAR(50) NOT NULL,
+	username 		    VARCHAR(50) NOT NULL,
+	password 		    VARCHAR(50) NOT NULL,
+	CONSTRAINT pk_user              PRIMARY KEY (seller_id),
+	CONSTRAINT fk_seller_customer   FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id)
+);
+
+CREATE TABLE ADDRESS(
+     address_id 	            NUMBER(11)  NOT NULL,
+     customer_id 	            NUMBER(11) NOT NULL,
+     address_line1 	            VARCHAR(50) NOT NULL,
+     address_line2 	            VARCHAR(50) NOT NULL
+     city 		  	            VARCHAR(20) NOT NULL,
+     county 		            VARCHAR(20) NOT NULL,
+     country 		            VARCHAR(20) NOT NULL,
+     zip 		  	            VARCHAR(20) NOT NULL,
+     CONSTRAINT pk_address          PRIMARY KEY (address_id),
+     CONSTRAINT fk_address_customer FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id)
 );
 
 							 
-CREATE TABLE THEORDER (
-    ORDERID 					NUMBER(11) NOT NULL,
-    CUSTOMERID 					NUMBER NOT NULL,
-    ORDERDATE  				    date,
-    CONSTRAINT pk_orderid PRIMARY KEY (ORDERID),
-    CONSTRAINT fk_custid FOREIGN KEY (CUSTOMERID) REFERENCES CUSTOMER (CUSTOMERID)
+CREATE TABLE LOCAL_ORDER (
+    order_id 					NUMBER(11) NOT NULL,
+    customer_id 			    NUMBER(11) NOT NULL,
+    order_date  				DATE,
+    CONSTRAINT pk_order             PRIMARY KEY (order_id),
+    CONSTRAINT fk_order_customer    FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id)
 );	
 
 
 CREATE TABLE SUPPLIER(
-    SUPPLIERID 				INTEGER(11) NOT NULL AUTO_INCREMENT,
-    SUPPLIER_NAME			VARCHAR(40) NOT NULL,
-	SUPPLIER_ADDRESS 		VARCHAR(30) NOT NULL,
-	SUPPLIER_TELNO 		    VARCHAR(20) NOT NULL,
-	CONSTRAINT pk_supplierid PRIMARY KEY (SUPPLIERID)
+    supplier_id 		     NUMBER(11) NOT NULL,
+    supplier_name			 VARCHAR(40) NOT NULL,
+	supplier_address 		 VARCHAR(30) NOT NULL,
+	supplier_phone 		     VARCHAR(20) NOT NULL,
+	CONSTRAINT pk_supplier   PRIMARY KEY (supplier_id)
 );
 
 						 
 CREATE TABLE PRODUCT(
-    PRODUCTID 				NUMBER(11) NOT NULL,
-	SUPPLIERID 				NUMBER NOT NULL,
-	ALBUM_COVER				VARCHAR(100)NOT NULL,
-	PRODUCTCODE				VARCHAR(30)NOT NULL,
-    PRODUCT_NAME			VARCHAR(30)NOT NULL,
-    PRODUCT_GENRE			VARCHAR(30)NOT NULL,
-    PRODUCT_DESC 			VARCHAR(5000) NOT NULL,
-    PRODUCT_PRICE 			DOUBLE(7,2) NOT NULL,
-    CONSTRAINT pk_productid PRIMARY KEY (PRODUCTID),
-	CONSTRAINT fk_supplierid FOREIGN KEY (SUPPLIERID) REFERENCES SUPPLIER (SUPPLIERID)
+    product_id 				      NUMBER(11) NOT NULL,
+	supplier_id 				  NUMBER(11) NOT NULL,
+	product_code				  VARCHAR(30)NOT NULL,
+    product_name			      VARCHAR(30)NOT NULL,
+    product_price 			      DOUBLE(7,2) NOT NULL,
+    CONSTRAINT pk_product         PRIMARY KEY (product_id),
+	CONSTRAINT fk_prod_supplier   FOREIGN KEY (supplier_id) REFERENCES SUPPLIER (supplier_id)
 );
 
 
-CREATE TABLE ORDERITEM(
-    ORDERID 		NUMBER NOT NULL,
-    PRODUCTID 		NUMBER NOT NULL,
-    CONSTRAINT pk_orderitemid PRIMARY KEY (ORDERID, PRODUCTID),
-    CONSTRAINT fk_orderid FOREIGN KEY (ORDERID) REFERENCES THEORDER (ORDERID),
-	CONSTRAINT fk_productid FOREIGN KEY (PRODUCTID) REFERENCES PRODUCT (PRODUCTID)
+CREATE TABLE ORDER_ITEM(
+    order_id 		              NUMBER(11) NOT NULL,
+    product_id 		              NUMBER(11) NOT NULL,
+    CONSTRAINT pk_order_item      PRIMARY KEY (order_id, product_id),
+    CONSTRAINT fk_item_order      FOREIGN KEY (order_id)   REFERENCES THEORDER (order_id),
+	CONSTRAINT fk_item_product    FOREIGN KEY (product_id) REFERENCES PRODUCT (product_id)
 );
 
-CREATE TABLE THEUSER (
-    USERID 		  	  NUMBER(11) NOT NULL,
-    FIRSTNAME 		  VARCHAR(50) NOT NULL,
-    LASTNAME 		  VARCHAR(50) NOT NULL,
-    EMAILADDRESS 	  VARCHAR(50) NOT NULL,
-	USERNAME 		  VARCHAR(50) NOT NULL,
-	PASSWORD 		  VARCHAR(50) NOT NULL,
-	CONSTRAINT pk_userid PRIMARY KEY (USERID)
-);
