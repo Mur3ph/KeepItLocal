@@ -23,7 +23,7 @@ CREATE TABLE SELLER (
 	username 		    VARCHAR(50) NOT NULL,
 	password 		    VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_user              PRIMARY KEY (seller_id),
-	CONSTRAINT fk_seller_customer   FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id)
+	CONSTRAINT fk_seller_customer   FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id) ON DELETE CASCADE
 );
 
 CREATE TABLE ADDRESS(
@@ -36,7 +36,7 @@ CREATE TABLE ADDRESS(
      country 		            VARCHAR(20) NOT NULL,
      zip 		  	            VARCHAR(20) NOT NULL,
      CONSTRAINT pk_address          PRIMARY KEY (address_id),
-     CONSTRAINT fk_address_customer FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id)
+     CONSTRAINT fk_address_customer FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id) ON DELETE CASCADE
 );
 
 							 
@@ -45,7 +45,7 @@ CREATE TABLE LOCAL_ORDER (
     customer_id 			    NUMBER(11) NOT NULL,
     order_date  				DATE,
     CONSTRAINT pk_order             PRIMARY KEY (order_id),
-    CONSTRAINT fk_order_customer    FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id)
+    CONSTRAINT fk_order_customer    FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id) ON DELETE CASCADE
 );	
 
 
@@ -65,7 +65,7 @@ CREATE TABLE PRODUCT(
     product_name			      VARCHAR(30)NOT NULL,
     product_price 			      DOUBLE(7,2) NOT NULL,
     CONSTRAINT pk_product         PRIMARY KEY (product_id),
-	CONSTRAINT fk_prod_supplier   FOREIGN KEY (supplier_id) REFERENCES SUPPLIER (supplier_id)
+	CONSTRAINT fk_prod_supplier   FOREIGN KEY (supplier_id) REFERENCES SUPPLIER (supplier_id) ON DELETE CASCADE
 );
 
 
@@ -73,7 +73,7 @@ CREATE TABLE ORDER_ITEM(
     order_id 		              NUMBER(11) NOT NULL,
     product_id 		              NUMBER(11) NOT NULL,
     CONSTRAINT pk_order_item      PRIMARY KEY (order_id, product_id),
-    CONSTRAINT fk_item_order      FOREIGN KEY (order_id)   REFERENCES THEORDER (order_id),
-	CONSTRAINT fk_item_product    FOREIGN KEY (product_id) REFERENCES PRODUCT (product_id)
+    CONSTRAINT fk_item_order      FOREIGN KEY (order_id)   REFERENCES THEORDER (order_id)  ON DELETE CASCADE,
+	CONSTRAINT fk_item_product    FOREIGN KEY (product_id) REFERENCES PRODUCT (product_id) ON DELETE CASCADE
 );
 
