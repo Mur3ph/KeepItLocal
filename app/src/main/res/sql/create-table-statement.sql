@@ -15,35 +15,35 @@ CREATE TABLE CUSTOMER(
 );
 
 CREATE TABLE SELLER (
-    seller_id 		  	NUMBER(11) NOT NULL,
-    customer_id 	    NUMBER(11) NOT NULL,
-    first_name 		    VARCHAR(50) NOT NULL,
-    last_name 		    VARCHAR(50) NOT NULL,
-    email 	            VARCHAR(50) NOT NULL,
-	username 		    VARCHAR(50) NOT NULL,
-	password 		    VARCHAR(50) NOT NULL,
+    seller_id 		  	            NUMBER(11) NOT NULL,
+    customer_id 	                NUMBER(11) NOT NULL,
+    first_name 		                VARCHAR(50) NOT NULL,
+    last_name 		                VARCHAR(50) NOT NULL,
+    email 	                        VARCHAR(50) NOT NULL,
+	username 		                VARCHAR(50) NOT NULL,
+	password 		                VARCHAR(50) NOT NULL,
 	CONSTRAINT pk_user              PRIMARY KEY (seller_id),
 	CONSTRAINT fk_seller_customer   FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id) ON DELETE CASCADE
 );
 
 CREATE TABLE ADDRESS(
-     address_id 	            NUMBER(11)  NOT NULL,
-     customer_id 	            NUMBER(11) NOT NULL,
-     address_line1 	            VARCHAR(50) NOT NULL,
-     address_line2 	            VARCHAR(50) NOT NULL,
-     city 		  	            VARCHAR(20) NOT NULL,
-     county 		            VARCHAR(20) NOT NULL,
-     country 		            VARCHAR(20) NOT NULL,
-     zip 		  	            VARCHAR(20) NOT NULL,
+     address_id 	                NUMBER(11)  NOT NULL,
+     customer_id 	                NUMBER(11) NOT NULL,
+     address_line1 	                VARCHAR(50) NOT NULL,
+     address_line2 	                VARCHAR(50) NOT NULL,
+     city 		  	                VARCHAR(20) NOT NULL,
+     county 		                VARCHAR(20) NOT NULL,
+     country 		                VARCHAR(20) NOT NULL,
+     zip 		  	                VARCHAR(20) NOT NULL,
      CONSTRAINT pk_address          PRIMARY KEY (address_id),
      CONSTRAINT fk_address_customer FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id) ON DELETE CASCADE
 );
 
 							 
 CREATE TABLE LOCAL_ORDER (
-    order_id 					NUMBER(11) NOT NULL,
-    customer_id 			    NUMBER(11) NOT NULL,
-    order_date  				DATE,
+    order_id 					    NUMBER(11) NOT NULL,
+    customer_id 			        NUMBER(11) NOT NULL,
+    order_date  				    DATE,
     CONSTRAINT pk_order             PRIMARY KEY (order_id),
     CONSTRAINT fk_order_customer    FOREIGN KEY (customer_id) REFERENCES CUSTOMER (customer_id) ON DELETE CASCADE
 );	
