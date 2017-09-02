@@ -22,8 +22,7 @@ CREATE TABLE Buyer(
   email 	                        VARCHAR(50)    NOT NULL,
   username 		                    VARCHAR(50)    NOT NULL,
   password 		                    VARCHAR(50)    NOT NULL,
-  min_budget                        NUMBER(10, 2)  NOT NULL,
-  max_budget                        NUMBER(10, 2)  NOT NULL,
+  budget                            NUMBER(10, 2)  NOT NULL,
   CONSTRAINT pk_buyer               PRIMARY KEY (buyer_id),
   CONSTRAINT fk_buyer_user          FOREIGN KEY (user_id) REFERENCES Users (user_id) ON DELETE CASCADE,
   CONSTRAINT ck_max_min_budget      CHECK ( min_budget <= max_budget )
