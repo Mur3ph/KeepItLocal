@@ -4,10 +4,10 @@ Application to tend for the needs of local residents and businesses.
 
 ###### Functionality Implemented:
 <ol>
-	<li>Home page with three buttons </li>
-	<li>Second page with three buttons </li>
-	<li>Second page accessible by Home page </li>
+	<li>Home page plus more with various buttons </li>
 	<li>Activity access and navigation</li>
+	<li>Redesigning UI( for better functionality</li>
+	<li>DEsigned database schema for app</li>
 	
 </ol>
 
